@@ -5,10 +5,6 @@
 
 # DESCRIPTION
 
-Our application enables policy makers to view and update a list of divisions,
-schools, and colleges in Virginia. The data is based on last year's VLDS fall
-membership and additional data from NCES.
-
 Our application allows to see the corrleation between teacher salaries and student performance in Virginia.  Student performance is looked at as four year pass rates, absentee rates, and secondary enrollment rates.
 
 
