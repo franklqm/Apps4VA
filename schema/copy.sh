@@ -11,7 +11,7 @@ psql -c "COPY (
 
 echo COPY pass_rate FROM vdoe
 psql -c "COPY (
-    SELECT o.sch_year, o.div_num, d.div_name, o.gender, o.disabil, o.lep, o.disadva, o.diploma_rate
+    SELECT o.sch_year, o.div_num, d.div_name, o.gender, o.race, o.disabil, o.lep, o.disadva, o.diploma_rate
     FROM ontime_cohort o
 	JOIN division d ON o.div_num = d.div_num
   ) TO STDOUT;" vdoe | \
