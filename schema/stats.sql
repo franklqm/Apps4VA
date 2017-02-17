@@ -1,11 +1,11 @@
-ANALYZE VERBOSE division;
-SELECT count(*) AS div_cnt FROM division;
+ANALYZE VERBOSE teacher_table;
+SELECT count(*) AS teach_cnt FROM teacher_table;
 
-ANALYZE VERBOSE school;
-SELECT count(*) AS sch_cnt FROM school;
+ANALYZE VERBOSE absentee_table;
+SELECT count(*) AS absent_cnt FROM absentee_table;
 
-ANALYZE VERBOSE enroll;
-SELECT count(*) AS enr_cnt FROM enroll;
+ANALYZE VERBOSE pass_rate;
+SELECT count(*) AS pass_cnt FROM pass_rate;
 
-ANALYZE VERBOSE college;
-SELECT count(*) AS col_cnt FROM college;
+ANALYZE VERBOSE secondary_enrollment;
+SELECT count(*) AS sec_cnt FROM secondary_enrollment;
