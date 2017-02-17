@@ -12,8 +12,8 @@ Our application allows to see the corrleation between teacher salaries and stude
 
 1. Download create.sql, copy.sh, and stats.sql from git.
 
-3. Run create.sql to create tables with group ownership.
+2. Run create.sql to create tables with group ownership.
 
-4. Run copy.sh on db.cs.jmu.edu to copy data from VDOE.
+3. Run copy.sh on db.cs.jmu.edu to copy data from VDOE.
 
-5. Run stats.sql to count rows and analyze the tables.
+4. Run stats.sql to count rows and analyze the tables.
