@@ -1,7 +1,7 @@
-ANALYZE VERBOSE teacher_table;
+ANALYZE VERBOSE teacher;
 SELECT count(*) AS teach_cnt FROM teacher_table;
 
-ANALYZE VERBOSE absentee_table;
+ANALYZE VERBOSE absentee;
 SELECT count(*) AS absent_cnt FROM absentee_table;
 
 ANALYZE VERBOSE pass_rate;
