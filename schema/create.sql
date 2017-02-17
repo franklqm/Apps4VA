@@ -1,3 +1,33 @@
+CREATE TABLE secondary_enrollment(
+	sch_year integer NOT NULL,
+	div_num integer NOT NULL,
+	div_name text NOT NULL,
+	gender text NOT NULL,
+	race text NOT NULL, 
+	disabil text NOT NULL,
+   	lep text NOT NULL,
+    disadva text NOT NULL,
+	pass_rate real NOT NULL);
+	
+ALTER TABLE seconday_enrollment OWNER TO crew;
+
+COMMENT ON TABLE seconday_enrollment IS 'Secondary enrollment in Virginia ';	
+
+CREATE TABLE pass_rate (
+	sch_year integer NOT NULL,
+	div_num integer NOT NULL,
+	div_name text NOT NULL,
+	gender text NOT NULL,
+	race text NOT NULL, 
+	disabil text NOT NULL,
+   	lep text NOT NULL,
+    disadva text NOT NULL,
+	pass_rate real NOT NULL);
+	
+ALTER TABLE pass_rate OWNER TO crew;
+
+COMMENT ON TABLE pass_rate IS 'Four year pass rates in Virginia';
+
 CREATE TABLE teacher_table (
 	div_num integer NOT NULL,
 	div_name text NOT NULL,
@@ -25,32 +55,4 @@ ALTER TABLE absentee_table OWNER TO crew;
 
 COMMENT ON TABLE absentee_table IS 'absentee data in Virginia';	
 
-CREATE TABLE pass_rate (
-	sch_year integer NOT NULL,
-	div_num integer NOT NULL,
-	div_name text NOT NULL,
-	gender text NOT NULL,
-	race text NOT NULL, 
-	disabil text NOT NULL,
-   	lep text NOT NULL,
-    disadva text NOT NULL,
-	pass_rate real NOT NULL);
-	
-ALTER TABLE pass_rate OWNER TO crew;
 
-COMMENT ON TABLE pass_rate IS 'Four year pass rates in Virginia';
-
-CREATE TABLE secondary_enrollment(
-	sch_year integer NOT NULL,
-	div_num integer NOT NULL,
-	div_name text NOT NULL,
-	gender text NOT NULL,
-	race text NOT NULL, 
-	disabil text NOT NULL,
-   	lep text NOT NULL,
-    disadva text NOT NULL,
-	pass_rate real NOT NULL);
-	
-ALTER TABLE seconday_enrollment OWNER TO crew;
-
-COMMENT ON TABLE seconday_enrollment IS 'Secondary enrollment in Virginia ';	
