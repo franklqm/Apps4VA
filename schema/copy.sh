@@ -1,30 +1,20 @@
-#!/bin/sh
+﻿#!/bin/sh
 # Run this script directly on the db server.
 
-echo COPY division FROM vdoe
+echo COPY postsec_enroll FROM vdoe
 psql -c "COPY (
-    SELECT div_num, div_name
-    FROM division
+    SELECT p.sch_year, p.div_num, d.div_name, p.gender, p.race, p.disabil, p.lep, p.disadva, ps_enrollment_cnt
+    FROM postsec_enroll p
+	JOIN division d ON p.div_num = d.div_num
   ) TO STDOUT;" vdoe | \
-  psql -c "COPY division FROM STDIN;" absent
+  psql -c "COPY postsec_enroll FROM STDIN;" crew
 
-echo COPY school FROM vdoe
+echo COPY ontime_cohort FROM vdoe
 psql -c "COPY (
-    SELECT div_num, sch_num, sch_name
-    FROM school
+    SELECT o.sch_year, o.div_num, d.div_name, o.gender, o.disabil, o.lep, o.disadva, o.diploma_rate
+    FROM ontime_cohort o
+	JOIN division d ON o.div_num = d.div_num
   ) TO STDOUT;" vdoe | \
-  psql -c "COPY school FROM STDIN;" absent
+  psql -c "COPY ontime_cohort FROM STDIN;" crew
 
-echo COPY enroll FROM vdoe
-psql -c "COPY (
-    SELECT
-      sch_year, div_num, sch_num,
-      race, gender, disabil, lep, disadva,
-      grade_num, fall_cnt
-    FROM fall_membership
-    WHERE sch_year = 2014
-  ) TO STDOUT;" vdoe | \
-  psql -c "COPY enroll FROM STDIN;" absent
 
-echo COPY college FROM csv
-psql -c "\copy college FROM college.csv WITH CSV HEADER" absent
