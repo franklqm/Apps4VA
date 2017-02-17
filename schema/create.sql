@@ -51,6 +51,6 @@ CREATE TABLE secondary_enrollment(
     disadva text NOT NULL,
 	pass_rate real NOT NULL);
 	
-ALTER TABLE seconday_enrollment OWNER TO crew;
+ALTER TABLE secondary_enrollment OWNER TO crew;
 
-COMMENT ON TABLE seconday_enrollment IS 'Secondary enrollment in Virginia ';	
+COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia ';	
