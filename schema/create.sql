@@ -90,9 +90,9 @@ CREATE TABLE secondary_enrollment(
 	ps_institution_type integer NOT NULL, 
 	ps_enrollment_cnt integer NOT NULL);
 
-ALTER TABLE seconday_enrollment OWNER TO crew;
+ALTER TABLE secondary_enrollment OWNER TO crew;
 
-COMMENT ON TABLE seconday_enrollment IS 'Secondary enrollment in Virginia';	
+COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia';	
 
 
 CREATE TABLE teacher(
