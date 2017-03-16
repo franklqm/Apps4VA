@@ -25,7 +25,7 @@ CREATE TABLE division(
 	phone text NOT NULL, 
 	fax text NOT NULL, 
 	address1 text NOT NULL, 
-	address2 text NOT NULL, 
+	address2 text, 
 	city text NOT NULL, 
 	state text NOT NULL, 
 	zip text NOT NULL);
