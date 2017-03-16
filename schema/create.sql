@@ -50,9 +50,9 @@ CREATE TABLE school(
 	phone text NOT NULL, 
 	member text NOT NULL);
 
-ALTER TABLE division OWNER TO crew;
+ALTER TABLE school OWNER TO crew;
 
-COMMENT ON TABLE division IS 'School divisions in Virginia';
+COMMENT ON TABLE school IS 'Schools in Virginia';
 
 
 CREATE TABLE secondary_enrollment(
