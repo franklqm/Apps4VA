@@ -80,13 +80,15 @@ COMMENT ON TABLE school IS 'Schools in Virginia';
 CREATE TABLE secondary_enrollment(
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
-	div_name text NOT NULL,
-	gender text NOT NULL,
+	sch_num integer NOT NULL,
 	race text NOT NULL, 
+	gender text NOT NULL,
 	disabil text NOT NULL,
-   	lep text NOT NULL,
-    disadva text NOT NULL,
-	pass_rate real NOT NULL);
+  lep text NOT NULL,
+  disadva text NOT NULL,
+	enroll_graduate_cnt integer NOT NULL, 
+	ps_institution_type integer NOT NULL, 
+	ps_enrollment_cnt integer NOT NULL);
 
 ALTER TABLE seconday_enrollment OWNER TO crew;
 
