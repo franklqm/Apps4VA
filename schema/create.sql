@@ -24,7 +24,7 @@ CREATE TABLE division(
 	superin text NOT NULL, 
 	phone text NOT NULL, 
 	fax text NOT NULL, 
-	address1 text NOT NULL, 
+	address1 text, 
 	address2 text, 
 	city text NOT NULL, 
 	state text NOT NULL, 
