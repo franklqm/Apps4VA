@@ -38,13 +38,15 @@ COMMENT ON TABLE division IS 'School divisions in Virginia';
 CREATE TABLE pass_rate (
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
-	div_name text NOT NULL,
-	gender text NOT NULL,
+	sch_num integer NOT NULL,
 	race text NOT NULL, 
+	gender text NOT NULL,
 	disabil text NOT NULL,
-   	lep text NOT NULL,
-    disadva text NOT NULL,
-	pass_rate real NOT NULL);
+  lep text NOT NULL,
+  disadva text NOT NULL,
+	cohort_cnt integer NOT NULL,
+	diploma_rate real NOT NULL, 
+	dropout_rate real NOT NULL);
 	
 ALTER TABLE pass_rate OWNER TO crew;
 
