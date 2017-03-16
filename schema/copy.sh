@@ -1,6 +1,13 @@
 ﻿#!/bin/sh
 # Run this script directly on the db server.
 
+echo COPY division FROM vdoe
+psql -c "COPY (
+	SELECT *
+	FROM division
+  ) TO STDOUT;" vdoe | \
+  psql -c "COPY division FROM STDIN;" crew 
+
 echo COPY pass_rate FROM vdoe
 psql -c "COPY (
     SELECT *
