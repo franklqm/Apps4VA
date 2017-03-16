@@ -1,15 +1,3 @@
-CREATE TABLE teacher(
-	div_num integer NOT NULL,
-	div_name text NOT NULL,
-	elementary_salary real NOT NULL, 
-	secondary_salary real NOT NULL, 
-	average_salary real NOT NULL);
-	
-ALTER TABLE teacher OWNER TO crew;
-
-COMMENT ON TABLE teacher IS 'Teacher salaries in Virginia';	
-
-
 CREATE TABLE absentee(
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
@@ -57,3 +45,16 @@ CREATE TABLE secondary_enrollment(
 ALTER TABLE seconday_enrollment OWNER TO crew;
 
 COMMENT ON TABLE seconday_enrollment IS 'Secondary enrollment in Virginia';	
+
+
+CREATE TABLE teacher(
+	div_num integer NOT NULL,
+	div_name text NOT NULL,
+	elementary_salary real NOT NULL, 
+	secondary_salary real NOT NULL, 
+	average_salary real NOT NULL);
+	
+ALTER TABLE teacher OWNER TO crew;
+
+COMMENT ON TABLE teacher IS 'Teacher salaries in Virginia';	
+
