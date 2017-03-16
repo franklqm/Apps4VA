@@ -15,6 +15,26 @@ ALTER TABLE absentee OWNER TO crew;
 COMMENT ON TABLE absentee IS 'absentee data in Virginia';	
 
 
+CREATE TABLE division(
+	div_num integer NOT NULL, 
+	div_name text NOT NULL, 
+	loc_code integer NOT NULL, 
+	loc_type text NOT NULL, 
+	region integer NOT NULL, 
+	superin text NOT NULL, 
+	phone text NOT NULL, 
+	fax text NOT NULL, 
+	address1 text NOT NULL, 
+	address2 text NOT NULL, 
+	city text NOT NULL, 
+	state text NOT NULL, 
+	zip text NOT NULL);
+
+ALTER TABLE division OWNER TO crew;
+
+COMMENT ON TABLE division IS 'School divisions in Virginia';
+
+
 CREATE TABLE pass_rate (
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
