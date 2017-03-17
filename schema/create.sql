@@ -24,8 +24,8 @@ CREATE TABLE division(
 	superin text NOT NULL, 
 	phone text NOT NULL, 
 	fax text NOT NULL, 
-	address1 text NOT NULL, 
-	address2 text NOT NULL, 
+	address1 text, 
+	address2 text, 
 	city text NOT NULL, 
 	state text NOT NULL, 
 	zip text NOT NULL);
@@ -56,20 +56,20 @@ COMMENT ON TABLE pass_rate IS 'Four year pass rates in Virginia';
 CREATE TABLE school(
 	div_num integer NOT NULL, 
 	sch_num integer NOT NULL, 
-	nces_num bigint NOT NULL, 
+	nces_num bigint, 
 	sch_name text NOT NULL, 
-	low_grade text NOT NULL, 
-	high_grade text NOT NULL, 
+	low_grade text, 
+	high_grade text, 
 	sch_desc text NOT NULL, 
-	grade_std text NOT NULL, 
-	schedule text NOT NULL, 
-	principal text NOT NULL, 
-	address1 text NOT NULL, 
-	address2 text NOT NULL, 
-	city text NOT NULL, 
-	state text NOT NULL, 
-	zip text NOT NULL, 
-	phone text NOT NULL, 
+	grade_std text, 
+	schedule text, 
+	principal text, 
+	address1 text, 
+	address2 text, 
+	city text, 
+	state text, 
+	zip text, 
+	phone text, 
 	member text NOT NULL);
 
 ALTER TABLE school OWNER TO crew;
@@ -90,9 +90,9 @@ CREATE TABLE secondary_enrollment(
 	ps_institution_type integer NOT NULL, 
 	ps_enrollment_cnt integer NOT NULL);
 
-ALTER TABLE seconday_enrollment OWNER TO crew;
+ALTER TABLE secondary_enrollment OWNER TO crew;
 
-COMMENT ON TABLE seconday_enrollment IS 'Secondary enrollment in Virginia';	
+COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia';	
 
 
 CREATE TABLE teacher(
