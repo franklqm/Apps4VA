@@ -6,7 +6,7 @@
 DROP FUNCTION IF EXISTS disabil_fnc(disabil text, loc_type text);
 
 CREATE FUNCTION disabil_fnc(disabil text, loc_type text)
-RETURNS TABLE(div_name text, absent_percentage real, diploma_rate) AS $$
+RETURNS TABLE(div_name text, absent_percentage real, diploma_rate real) AS $$
 
 	SELECT d.div_name, a.absentee_percentage, p.diploma_rate
 	FROM division d
