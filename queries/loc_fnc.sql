@@ -16,11 +16,11 @@ RETURNS TABLE(div_name text, absent_percentage real, diploma_rate real) AS $$
 		AND a.sch_year = $2
 		AND p.sch_year = $2
 		-- all students
-		AND race = 'ALL'
-		AND gender = 'ALL'
-		AND disabil = 'ALL'
-		AND lep = 'ALL'
-		AND disadva = 'ALL'
+		AND p.race = 'ALL'
+		AND p.gender = 'ALL'
+		AND p.disabil = 'ALL'
+		AND p.lep = 'ALL'
+		AND p.disadva = 'ALL'
 
 $$ LANGUAGE SQL STABLE STRICT;
 
