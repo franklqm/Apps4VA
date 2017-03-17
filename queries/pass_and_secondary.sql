@@ -10,6 +10,7 @@ RETURNS TABLE(div_name text, cohort_cnt integer, ps_enrollment_cnt integer) AS $
 
 	SELECT d.div_name, p.cohort_cnt, s.ps_enrollment_cnt
 	FROM division d
+		JOIN absentee a ON d.div_num = a.div_num
 		JOIN pass_rate p ON d.div_num = p.div_num
 		JOIN secondary_enrollment s ON d.div_num = s.div_num
 	WHERE d.loc_type = $1
