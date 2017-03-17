@@ -56,20 +56,20 @@ COMMENT ON TABLE pass_rate IS 'Four year pass rates in Virginia';
 CREATE TABLE school(
 	div_num integer NOT NULL, 
 	sch_num integer NOT NULL, 
-	nces_num bigint NOT NULL, 
+	nces_num bigint, 
 	sch_name text NOT NULL, 
 	low_grade text, 
 	high_grade text, 
 	sch_desc text NOT NULL, 
-	grade_std text NOT NULL, 
-	schedule text NOT NULL, 
-	principal text NOT NULL, 
+	grade_std text, 
+	schedule text, 
+	principal text, 
 	address1 text, 
 	address2 text, 
-	city text NOT NULL, 
-	state text NOT NULL, 
-	zip text NOT NULL, 
-	phone text NOT NULL, 
+	city text, 
+	state text, 
+	zip text, 
+	phone text, 
 	member text NOT NULL);
 
 ALTER TABLE school OWNER TO crew;
