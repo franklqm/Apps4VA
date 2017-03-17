@@ -26,6 +26,3 @@ $$ LANGUAGE SQL STABLE STRICT;
 
 ALTER FUNCTION loc_fnc(loc_type text, sch_year integer) OWNER TO crew;
 
-select *
-from pass_rate
-limit 100;
