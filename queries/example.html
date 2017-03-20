@@ -1,8 +1,121 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>crew_gp3</title>
-	</head>
-	<body>
-	</body>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+
+<h3>Group name</h3>
+
+CS 474 Query Crew
+
+<h3>Research question</h3>
+
+What is the correlation between average salary and absentee percentage for each division?
+
+<h3>Initial results</h3>
+
+<table border="1" cellpadding="3">
+    <tr>
+        <td colspan="3" bgcolor="lightyellow">
+<pre>
+    SELECT d.div_name, t.average_salary
+	FROM division d
+		JOIN absentee a ON d.div_num = a.div_num
+		JOIN teacher t ON d.div_num = t.div_num
+	WHERE d.loc_type = $1
+		AND a.absentee_percentage = $2
+		AND a.race = 'ALL'
+		AND a.gender = 'ALL'
+		AND a.disabil = 'ALL'
+		AND a.lep = 'ALL'
+		AND a.disadva = 'ALL'
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <th>Division Number</th>
+        <th>Average Salary</th>
+        <td rowspan="12">
+            <div id="linechart" style="width: 500px; height: 300px;"></div>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ["Disability Type", "Dec 1st Count"],
+      ["SLD", 4833],
+      ["OHI", 2330],
+      ["ID", 1467],
+      ["AUT", 1073],
+      ["EMN", 1033],
+      ["MD", 505],
+      ["HI", 120],
+      ["SLI", 100],
+      ["OI", 67],
+      ["TBI", 49],
+      ["VI", 44],
+    ]);
+
+    var options = {
+      chartArea: {width:'90%', height:'90%'},
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+
+    chart.draw(data, options);
+  }
+</script>
+
+</body>
 </html>
