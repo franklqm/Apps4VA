@@ -21,16 +21,8 @@ What is the correlation between average salary and absentee percentage for each 
         <td colspan="3" bgcolor="lightyellow">
 <pre>
     SELECT d.div_name, t.average_salary
-	FROM division d
-		JOIN absentee a ON d.div_num = a.div_num
-		JOIN teacher t ON d.div_num = t.div_num
-	WHERE d.loc_type = $1
-		AND a.absentee_percentage = $2
-		AND a.race = 'ALL'
-		AND a.gender = 'ALL'
-		AND a.disabil = 'ALL'
-		AND a.lep = 'ALL'
-		AND a.disadva = 'ALL'
+	FROM absent_to_salary($1, $2)
+	ORDER BY t.average_salary DESC, d.div_name
 </pre>
         </td>
     </tr>
