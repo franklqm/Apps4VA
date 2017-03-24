@@ -31,5 +31,8 @@ psql -c "COPY (
   
 echo COPY teacher FROM csv
 psql -c "\copy teacher FROM final_teacher_salary.csv WITH CSV HEADER" crew
+
+echo COPY absentee FROM csv
+psql -c "\copy absentee FROM AbsenteeData.csv WITH CSV HEADER" crew
   
     
