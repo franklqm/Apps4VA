@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS absentee;
+-- DROP TABLE IF EXISTS absentee;
 
 CREATE TABLE absentee(
 	sch_year integer NOT NULL,
@@ -102,7 +102,7 @@ ALTER TABLE secondary_enrollment OWNER TO crew;
 COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia';	
 
 
-DROP TABLE IF EXISTS teacher;
+-- DROP TABLE IF EXISTS teacher;
 
 CREATE TABLE teacher(
 	div_num integer NOT NULL,
