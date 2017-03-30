@@ -98,7 +98,7 @@ COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia';
 CREATE TABLE teacher(
 	div_num integer NOT NULL,
 	div_name text NOT NULL,
-	average_salary real NOT NULL);
+	average_salary real);
 	
 ALTER TABLE teacher OWNER TO crew;
 
