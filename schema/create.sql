@@ -2,13 +2,10 @@ CREATE TABLE absentee(
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
 	div_name text NOT NULL,
-	gender text NOT NULL,
-	race text NOT NULL, 
-	disabil text NOT NULL,
-   	lep text NOT NULL,
-    disadva text NOT NULL,
-	grade_num integer NOT NULL, 
-	absentee_percentage real NOT NULL);
+	b0and10_cnt integer NOT NULL,
+  	b11and15_cnt integer NOT NULL,
+  	b16and20_cnt integer NOT NULL,
+  	over20_cnt integer NOT NULL);
 	
 ALTER TABLE absentee OWNER TO crew;
 
