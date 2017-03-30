@@ -5,9 +5,9 @@ CREATE TABLE absentee(
 	div_num integer NOT NULL,
 	div_name text NOT NULL,
 	b0and10_cnt integer NOT NULL,
-  	b11and15_cnt integer NOT NULL,
-  	b16and20_cnt integer NOT NULL,
-  	over20_cnt integer NOT NULL);
+ 	b11and15_cnt integer NOT NULL,
+ 	b16and20_cnt integer NOT NULL,
+ 	over20_cnt integer NOT NULL);
 	
 ALTER TABLE absentee OWNER TO crew;
 
