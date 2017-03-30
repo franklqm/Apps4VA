@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS absentee;
+
 CREATE TABLE absentee(
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
@@ -11,6 +13,8 @@ ALTER TABLE absentee OWNER TO crew;
 
 COMMENT ON TABLE absentee IS 'absentee data in Virginia';	
 
+
+DROP TABLE IF EXISTS division;
 
 CREATE TABLE division(
 	div_num integer NOT NULL, 
@@ -32,6 +36,8 @@ ALTER TABLE division OWNER TO crew;
 COMMENT ON TABLE division IS 'School divisions in Virginia';
 
 
+DROP TABLE IF EXISTS pass_rate;
+
 CREATE TABLE pass_rate (
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
@@ -49,6 +55,8 @@ ALTER TABLE pass_rate OWNER TO crew;
 
 COMMENT ON TABLE pass_rate IS 'Four year pass rates in Virginia';
 
+
+DROP TABLE IF EXISTS school;
 
 CREATE TABLE school(
 	div_num integer NOT NULL, 
@@ -74,6 +82,8 @@ ALTER TABLE school OWNER TO crew;
 COMMENT ON TABLE school IS 'Schools in Virginia';
 
 
+DROP TABLE IF EXISTS secondary_enrollment;
+
 CREATE TABLE secondary_enrollment(
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
@@ -91,6 +101,8 @@ ALTER TABLE secondary_enrollment OWNER TO crew;
 
 COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia';	
 
+
+DROP TABLE IF EXISTS teacher;
 
 CREATE TABLE teacher(
 	div_num integer NOT NULL,
