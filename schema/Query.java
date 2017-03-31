@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * CS 474 HW5: Dynamic Charts
+ * CS 474 GP4
  *
- * @author Jeffrey Antetomaso
+ * @author Jeffrey Antetomaso, Matthew Bowyer, Zach, Quentin
  */
 public class Query {
 
@@ -34,6 +34,7 @@ public class Query {
         String str = request.getParameter(name);
         if (str != null)
           return str;
+          
         else
           return null;
         
@@ -57,21 +58,13 @@ public class Query {
             data = new int[6][5];
             
             st = db.prepareStatement(sql);
-            div_name = "'%" + div_name + "%'"; 
+            div_name =  "%" + div_name + "%";
             st.setString(1, div_name);
             
             rs = st.executeQuery();
             
             
             int rowNumber = 0;
-            
-            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    System.out.print(5);
-                }    
-            }    
             
             while(rs.next())
             {   if (rowNumber < 6)
@@ -81,8 +74,9 @@ public class Query {
                     data[rowNumber][2] = rs.getInt(3);
                     data[rowNumber][3] = rs.getInt(4);
                     data[rowNumber][4] = rs.getInt(5);
-                    rs.next();
+                    
                 }
+                rowNumber++;
             }  
             
             rs.close();

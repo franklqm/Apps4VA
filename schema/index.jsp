@@ -35,7 +35,7 @@
         <table style="text-align: center">
             <thead>
                 <tr bgcolor="lightyellow">
-                    <th>sch_year</th>
+                    <th>Year</th>
                     <th>0 to 10</th>
                     <th>11 to 15</th>
                     <th>16 to 20</th>
@@ -100,7 +100,7 @@
                                 
                                 for (int j = 0; j < 5; j++)
                                 {
-                                    if (j != 5)
+                                    if (j != 4)
                                     {
                                         out.print(data[i][j] + ", ");
                                     }   
