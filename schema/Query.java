@@ -36,7 +36,7 @@ public class Query {
           return str;
           
         else
-          return null;
+          return "";
         
     }
 
@@ -47,7 +47,7 @@ public class Query {
         }
         // TODO Step 3: Execute SQL
         String sql = "SELECT sch_year, b0and10_cnt, b11and15_cnt, b16and20_cnt, over20_cnt FROM absentee WHERE"
-                + " div_name LIKE ?"
+                + " div_name ILIKE ?"
                 + " ORDER BY sch_year ASC";
         try {
             Connection db = Database.open();
