@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>Absentee Data by County</title>
-        <link href="GP4.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
     <body>
