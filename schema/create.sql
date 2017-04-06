@@ -7,7 +7,9 @@ CREATE TABLE absentee(
 	b0and10_cnt integer NOT NULL,
  	b11and15_cnt integer NOT NULL,
  	b16and20_cnt integer NOT NULL,
- 	over20_cnt integer NOT NULL);
+ 	over20_cnt integer NOT NULL
+	PRIMARY KEY (sch_year, div_num)
+);
 	
 ALTER TABLE absentee OWNER TO crew;
 
@@ -29,7 +31,8 @@ CREATE TABLE division(
 	address2 text, 
 	city text NOT NULL, 
 	state text NOT NULL, 
-	zip text NOT NULL);
+	zip text NOT NULL
+);
 
 ALTER TABLE division OWNER TO crew;
 
@@ -49,7 +52,8 @@ CREATE TABLE pass_rate (
   disadva text NOT NULL,
 	cohort_cnt integer NOT NULL,
 	diploma_rate real NOT NULL, 
-	dropout_rate real NOT NULL);
+	dropout_rate real NOT NULL
+);
 	
 ALTER TABLE pass_rate OWNER TO crew;
 
@@ -75,7 +79,8 @@ CREATE TABLE school(
 	state text, 
 	zip text, 
 	phone text, 
-	member text NOT NULL);
+	member text NOT NULL
+);
 
 ALTER TABLE school OWNER TO crew;
 
@@ -95,7 +100,8 @@ CREATE TABLE secondary_enrollment(
   disadva text NOT NULL,
 	enroll_graduate_cnt integer NOT NULL, 
 	ps_institution_type integer NOT NULL, 
-	ps_enrollment_cnt integer NOT NULL);
+	ps_enrollment_cnt integer NOT NULL
+);
 
 ALTER TABLE secondary_enrollment OWNER TO crew;
 
@@ -107,7 +113,9 @@ COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia';
 CREATE TABLE teacher(
 	div_num integer NOT NULL,
 	div_name text NOT NULL,
-	average_salary real);
+	average_salary real
+	PRIMARY KEY (div_num)
+);
 	
 ALTER TABLE teacher OWNER TO crew;
 
