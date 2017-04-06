@@ -12,7 +12,6 @@ CREATE TABLE absentee(
 );
 	
 ALTER TABLE absentee OWNER TO crew;
-
 COMMENT ON TABLE absentee IS 'absentee data in Virginia';	
 
 
@@ -36,7 +35,6 @@ CREATE TABLE division(
 );
 
 ALTER TABLE division OWNER TO crew;
-
 COMMENT ON TABLE division IS 'School divisions in Virginia';
 
 
@@ -57,7 +55,6 @@ CREATE TABLE pass_rate (
 );
 	
 ALTER TABLE pass_rate OWNER TO crew;
-
 COMMENT ON TABLE pass_rate IS 'Four year pass rates in Virginia';
 
 
@@ -84,7 +81,6 @@ CREATE TABLE school(
 );
 
 ALTER TABLE school OWNER TO crew;
-
 COMMENT ON TABLE school IS 'Schools in Virginia';
 
 
@@ -105,7 +101,6 @@ CREATE TABLE secondary_enrollment(
 );
 
 ALTER TABLE secondary_enrollment OWNER TO crew;
-
 COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia';	
 
 
@@ -119,7 +114,5 @@ CREATE TABLE teacher(
 );
 	
 ALTER TABLE teacher OWNER TO crew;
-
 COMMENT ON TABLE teacher IS 'Teacher salaries in Virginia';	
-
 
