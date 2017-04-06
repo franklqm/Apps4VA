@@ -7,7 +7,7 @@ CREATE TABLE absentee(
 	b0and10_cnt integer NOT NULL,
  	b11and15_cnt integer NOT NULL,
  	b16and20_cnt integer NOT NULL,
- 	over20_cnt integer NOT NULL
+ 	over20_cnt integer NOT NULL,
 	PRIMARY KEY (sch_year, div_num)
 );
 	
@@ -31,7 +31,8 @@ CREATE TABLE division(
 	address2 text, 
 	city text NOT NULL, 
 	state text NOT NULL, 
-	zip text NOT NULL
+	zip text NOT NULL,
+	PRIMARY KEY (div_num)
 );
 
 ALTER TABLE division OWNER TO crew;
@@ -113,7 +114,7 @@ COMMENT ON TABLE secondary_enrollment IS 'Secondary enrollment in Virginia';
 CREATE TABLE teacher(
 	div_num integer NOT NULL,
 	div_name text NOT NULL,
-	average_salary real
+	average_salary real,
 	PRIMARY KEY (div_num)
 );
 	
