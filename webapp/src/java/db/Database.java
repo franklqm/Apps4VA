@@ -15,7 +15,7 @@ public class Database {
     private static final String DRIVER = "org.postgresql.Driver";
 
     /** Database connection string. */
-    private static final String DB_URL = "jdbc:postgresql://localhost/crew";
+    private static final String DB_URL = "jdbc:postgresql://localhost/vdoe";
 
     /** Database user name. */
     private static final String DB_USER = "antetojl";
