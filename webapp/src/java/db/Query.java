@@ -7,30 +7,18 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * CS 474 HW5: Dynamic Charts
+ * CS 474 GP4
  *
- * @author Jeffrey Antetomaso
+ * @author Jeffrey Antetomaso, Matthew Bowyer, Zach, Quentin
  */
 public class Query {
 
-    public int div_num;
-    public int sch_num;
-    public String race;
-    public String gender;
-    public String disabil;
-    public String lep;
-    public String disadva;
+    public String div_name;
 
     private int[][] data;
 
     public Query(HttpServletRequest request) {
-        div_num = parseInt(request, "div_num");
-        sch_num = parseInt(request, "sch_num");
-        race = parseStr(request, "race");
-        gender = parseStr(request, "gender");
-        disabil = parseStr(request, "disabil");
-        lep = parseStr(request, "lep");
-        disadva = parseStr(request, "disadva");
+        div_name = parseStr(request, "div_name");
     }
 
     private int parseInt(HttpServletRequest request, String name) {
@@ -44,11 +32,12 @@ public class Query {
 
     private String parseStr(HttpServletRequest request, String name) {
         String str = request.getParameter(name);
-        if (str != null) {
-            return str;
-        } else {
-            return "ALL";
-        }
+        if (str != null)
+          return str;
+          
+        else
+          return "";
+        
     }
 
     public int[][] getData() {
@@ -57,32 +46,20 @@ public class Query {
             return data;
         }
         // TODO Step 3: Execute SQL
-        String sql = "SELECT sch_year, avg_score FROM sol_test_data WHERE"
-                + " div_num = ? AND "
-                + "sch_num = ? AND "
-                + "race = ? AND "
-                + "gender = ? AND "
-                + "disabil = ? AND "
-                + "lep = ? AND "
-                + "disadva = ? AND "
-                + "test_name = 'ALL' AND test_level != 'ALL 3-8'"
-                + " ORDER BY sch_year ASC, subject ASC";
+        String sql = "SELECT sch_year, b0and10_cnt, b11and15_cnt, b16and20_cnt, over20_cnt FROM absentee WHERE"
+                + " div_name ILIKE ?"
+                + " ORDER BY sch_year ASC";
         try {
             Connection db = Database.open();
             PreparedStatement st;
             ResultSet rs;
             
             // execute query, save results
-            data = new int[9][6];
+            data = new int[6][5];
             
             st = db.prepareStatement(sql);
-            st.setInt(1, div_num);
-            st.setInt(2, sch_num);
-            st.setString(3, race);
-            st.setString(4, gender);
-            st.setString(5, disabil);
-            st.setString(6, lep);
-            st.setString(7, disadva);
+            div_name =  "%" + div_name + "%";
+            st.setString(1, div_name);
             
             rs = st.executeQuery();
             
@@ -90,20 +67,16 @@ public class Query {
             int rowNumber = 0;
             
             while(rs.next())
-            {   if (rowNumber < 9)
+            {   if (rowNumber < 6)
                 {
                     data[rowNumber][0] = rs.getInt(1);
                     data[rowNumber][1] = rs.getInt(2);
-                    rs.next();
-                    data[rowNumber][2] = rs.getInt(2);
-                    rs.next();
-                    data[rowNumber][3] = rs.getInt(2);
-                    rs.next();
-                    data[rowNumber][4] = rs.getInt(2);
-                    rs.next();
-                    data[rowNumber][5] = rs.getInt(2);
-                    rowNumber++;
+                    data[rowNumber][2] = rs.getInt(3);
+                    data[rowNumber][3] = rs.getInt(4);
+                    data[rowNumber][4] = rs.getInt(5);
+                    
                 }
+                rowNumber++;
             }  
             
             rs.close();

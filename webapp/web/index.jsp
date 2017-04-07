@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>Absentee Data by County</title>
-        <link href="hw4.css" rel="stylesheet" type="text/css">
+        <link href="webapp.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
     <body>
@@ -148,8 +148,10 @@
               
         
         
-        
-                <input type="submit" name = "submit"/>
+          </select>
+          
+          <input type="submit" name = "submit"/>
+        </form>
         <br>
               
         <%
