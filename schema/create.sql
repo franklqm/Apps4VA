@@ -116,3 +116,27 @@ CREATE TABLE teacher(
 ALTER TABLE teacher OWNER TO crew;
 COMMENT ON TABLE teacher IS 'Teacher salaries in Virginia';	
 
+-- Table: fall_membership
+
+-- DROP TABLE fall_membership;
+
+CREATE TABLE fall_membership
+(
+  sch_year integer NOT NULL,
+  div_num integer NOT NULL,
+  sch_num integer NOT NULL,
+  grade_num integer NOT NULL,
+  race text NOT NULL,
+  gender text NOT NULL,
+  disabil text NOT NULL,
+  lep text NOT NULL,
+  disadva text NOT NULL,
+  fall_cnt integer NOT NULL
+);
+
+ALTER TABLE fall_membership
+  OWNER TO crew;
+--GRANT ALL ON TABLE fall_membership TO postgres;
+--GRANT SELECT ON TABLE fall_membership TO public;
+COMMENT ON TABLE fall_membership
+  IS 'Number of students enrolled in VA public schools each Sep 30th';
