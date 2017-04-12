@@ -8,12 +8,12 @@ psql -c "COPY (
   ) TO STDOUT;" vdoe | \
   psql -c "COPY division FROM STDIN;" crew 
 
-echo COPY fall_enrollment FROM vdoe
+echo COPY fall_membership FROM vdoe
 psql -c "COPY (
 	SELECT *
-	FROM fall_enrollment 
+	FROM fall_membership 
 	) TO STDOUT;" vdoe | \
-	psql -c "COPY fall_enrollment FROM STDIN;" crew
+	psql -c "COPY fall_membership FROM STDIN;" crew
 
 echo COPY pass_rate FROM vdoe
 psql -c "COPY (
