@@ -37,9 +37,9 @@ psql -c "COPY (
   psql -c "COPY secondary_enrollment FROM STDIN;" crew
   
 echo COPY teacher FROM csv
-psql -c "\copy teacher FROM ../csv/salary.csv WITH CSV HEADER" crew
+psql -c "\copy teacher FROM crew/csv/salary.csv WITH CSV HEADER" crew
 
 echo COPY absentee FROM csv
-psql -c "\copy absentee FROM ../csv/absentee.csv WITH CSV HEADER" crew
+psql -c "\copy absentee FROM crew/csv/absentee.csv WITH CSV HEADER" crew
   
     
