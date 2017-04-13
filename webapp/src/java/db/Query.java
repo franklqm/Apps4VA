@@ -15,7 +15,7 @@ public class Query {
 
     public String div_name;
 
-    private int[][] data;
+    private double[][] data;
 
     public Query(HttpServletRequest request) {
         div_name = parseStr(request, "div_name");
@@ -40,13 +40,13 @@ public class Query {
         
     }
 
-    public int[][] getData() {
+    public double[][] getData() {
         // return cached copy if exists
         if (data != null) {
             return data;
         }
         // TODO Step 3: Execute SQL
-        String sql = "SELECT sch_year, b0and10_cnt, b11and15_cnt, b16and20_cnt, over20_cnt FROM absentee WHERE"
+        String sql = "SELECT sch_year, b0and10, b11and15, b16and20, over20 FROM absentee WHERE"
                 + " div_name ILIKE ?"
                 + " ORDER BY sch_year ASC";
         try {
@@ -55,10 +55,9 @@ public class Query {
             ResultSet rs;
             
             // execute query, save results
-            data = new int[6][5];
+            data = new double[6][5];
             
             st = db.prepareStatement(sql);
-            div_name =  "%" + div_name + "%";
             st.setString(1, div_name);
             
             rs = st.executeQuery();
@@ -69,12 +68,11 @@ public class Query {
             while(rs.next())
             {   if (rowNumber < 6)
                 {
-                    data[rowNumber][0] = rs.getInt(1);
-                    data[rowNumber][1] = rs.getInt(2);
-                    data[rowNumber][2] = rs.getInt(3);
-                    data[rowNumber][3] = rs.getInt(4);
-                    data[rowNumber][4] = rs.getInt(5);
-                    
+                    data[rowNumber][0] = rs.getDouble(1);
+                    data[rowNumber][1] = rs.getDouble(2);
+                    data[rowNumber][2] = rs.getDouble(3);
+                    data[rowNumber][3] = rs.getDouble(4);
+                    data[rowNumber][4] = rs.getDouble(5);    
                 }
                 rowNumber++;
             }  

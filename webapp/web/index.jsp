@@ -176,8 +176,8 @@
                 <%
                       if(request.getParameter("submit") != null)  { 
                       
-                      int[][] data = query.getData();
-                      out.print("<tbody>");
+                      double[][] data = query.getData();
+                      out.print("<tbody>\n");
                       for (int i = 0; i < data.length; i++)
                       {
 			out.println("<tr>");
@@ -221,7 +221,7 @@
                     <% 
                         if(request.getParameter("submit") != null)
                         {
-                            int[][] data = query.getData();
+                            double[][] data = query.getData();
                             
                             //out.print("["); //first one
                             for (int i = 0; i < 6; i++)
