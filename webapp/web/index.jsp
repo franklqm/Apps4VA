@@ -151,11 +151,27 @@
           </select>
           
           <input type="submit" name = "submit"/>
+          
+          <input type="button" value="Q1" id="Q1"/>
+          <input type="button" value="Q2" id="Q2" onclick = "myTest()"/>
+          
+          
         </form>
         <br>
               
         <%
             Query query = new Query(request);
+            
+                if (request.getParameter("Q1") != null)
+                      {
+                          out.println("Q1 is lit!");
+                      }
+                      
+                        if (request.getParameter("Q2") != null)
+                      {
+                          out.println("Q2 is lit!");
+                      }
+
         %>
         <script>
             document.getElementById("div_name").value = "<%= query.div_name %>";
@@ -191,7 +207,8 @@
                       }    
 													
                       out.println("</trbody></table>");}
-
+                      
+                      
                 %>
         <br>
         
@@ -278,6 +295,16 @@
 
                 var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
                 chart.draw(data, options);
+            }
+        </script>
+        
+        <script>
+            function Q1() {
+                Q1 is going
+            }
+            
+            function Q2() {
+                Q2 going
             }
         </script>
 

@@ -4,10 +4,10 @@ CREATE TABLE absentee(
 	sch_year integer NOT NULL,
 	div_num integer NOT NULL,
 	div_name text NOT NULL,
-	b0and10_cnt integer NOT NULL,
- 	b11and15_cnt integer NOT NULL,
- 	b16and20_cnt integer NOT NULL,
- 	over20_cnt integer NOT NULL,
+	b0and10 real NOT NULL,
+ 	b11and15 real NOT NULL,
+ 	b16and20 real NOT NULL,
+ 	over20 real NOT NULL,
 	PRIMARY KEY (sch_year, div_num)
 );
 	
