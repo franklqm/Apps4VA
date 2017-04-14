@@ -111,11 +111,8 @@
         <table style="text-align: center">
             <thead>
                 <tr bgcolor="lightyellow">
-                    <th>Year</th>
-                    <th>0 to 10</th>
-                    <th>11 to 15</th>
-                    <th>16 to 20</th>
-                    <th>Over 20</th>
+                    <th>County</th>
+                    <th>Salary</th>
                 </tr>
             </thead>
             <tbody>
@@ -127,22 +124,17 @@
                       ArrayList<String> counties = query.counties;
                       ArrayList<Double> salaries = query.salaries;
                       
-                      out.print("<tbody>\n");
                       for (int i = 0; i < counties.size(); i++)
                       {
 			out.println("<tr>");
-                            if (i % 2 == 0){
-                                out.println("<td align="+ "\"center\">" + counties.get(i) + "</td>");
-                            }    
-                            else{
-                                out.println("<td align="+ "\"center\">" + salaries.get(i) + "</td>");
-                            }                          
+                        out.println("<td align="+ "\"center\">" + counties.get(i) + "</td>");
+                        out.println("<td align="+ "\"center\">" + salaries.get(i) + "</td>");
 			out.println("</tr>");
                       }    
 													
-                      out.println("</trbody></table>");}
+                   
 
-                %>
+                    }%>
         <br>
         
         
@@ -168,9 +160,9 @@
                     <% 
                         if(request.getParameter("submit") != null)
                         {
+                            
                             ArrayList<String> counties = query.counties;
                             ArrayList<Double> salaries = query.salaries;
-                            
                             //out.print("["); //first one
                             for (int i = 0; i < counties.size(); i++)
                             {

@@ -78,10 +78,7 @@ public class Query {
     }
 
     public void getData() {
-        // return cached copy if exists
-        /*if (data != null) {
-            return data;
-        }*/
+        
         // TODO Step 3: Execute SQL
         
         if (b0and10symbol == null)
@@ -111,7 +108,7 @@ public class Query {
             // execute query, save results         
             
             st = db.prepareStatement(sql);
-            st.setDouble(1, new Double(b0and10));
+            st.setDouble(1, b0and10);
             st.setDouble(2, b11and15);
             st.setDouble(3, b16and20);
             st.setDouble(4, over20);
@@ -119,8 +116,6 @@ public class Query {
             
             rs = st.executeQuery();
 
-            //int rowNumber = 0;
-            
             while(rs.next())
             {   
                 counties.add(rs.getString(1));
@@ -132,7 +127,6 @@ public class Query {
             db.close();
             // close database resources
         } catch (SQLException exc) {
-            // lazy hack to simplify hw5
             throw new RuntimeException(exc);
         }
     }
