@@ -15,17 +15,17 @@ import java.util.ArrayList;
  */
 public class Query {
 
-    public String div_name = null;
-    public String b0and10symbol = null;
-    public String b11and15symbol = null;
-    public String b16and20symbol = null;
-    public String over20symbol = null;
-    public String salarysymbol = null;
-    public double b0and10 = 0.0;
-    public double b11and15 = 0.0;
-    public double b16and20 = 0.0;
-    public double over20 = 0.0;
-    public double salary = 9999999999.0;
+    public String div_name;
+    public String b0and10symbol;
+    public String b11and15symbol;
+    public String b16and20symbol;
+    public String over20symbol;
+    public String salarysymbol;
+    public double b0and10;
+    public double b11and15;
+    public double b16and20;
+    public double over20;
+    public double salary;
     
     public ArrayList<String> counties = new ArrayList<String>();
     public ArrayList<Double> salaries = new ArrayList<Double>();
