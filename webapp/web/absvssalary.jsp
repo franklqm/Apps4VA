@@ -24,7 +24,7 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" name = "b0and10" id = "b0and10">
+          <input type="text" id = "b0and10">
           <br>
           
           Between 11 and 15:
@@ -35,7 +35,7 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" name = "b11and15" id = "b11and15">
+          <input type="text" id = "b11and15">
           <br>
           
           Between 16 and 20:
@@ -46,7 +46,7 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" name = "b16and20" id = "b16and20">
+          <input type="text" id = "b16and20">
           <br>
           
           Over 20: 
@@ -57,7 +57,7 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" name = "over20" id = "over20">
+          <input type="text" id = "over20">
           <br>
           
           Teacher salary:
@@ -68,10 +68,10 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" name = "salary" id = "salary">
+          <input type="text" id = "salary">
           <br>
           
-          <input type="submit" name = "submit"/>
+          <input type="submit" name = "submit">
           
         </form>
         <br>
