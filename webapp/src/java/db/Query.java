@@ -80,7 +80,8 @@ public class Query {
 
     public void getData() {
         
-        // TODO Step 3: Execute SQL
+        // Create backbone of query
+        
         sql = "SELECT DISTINCT absentee.div_name, teacher.average_salary" +
                 " FROM teacher " +
                     "JOIN absentee ON teacher.div_num = absentee.div_num " +
@@ -90,34 +91,33 @@ public class Query {
                     "AND absentee.over20 " + over20symbol + " ? " +
                     "AND teacher.average_salary " + salarysymbol + " ? " + 
                     "ORDER BY teacher.average_salary ASC";
+        
         try {
-            Connection db = Database.open();
+            Connection db = Database.open();    // Open connection to Database
             PreparedStatement st;
             ResultSet rs;
-            // execute query, save results         
             
-            st = db.prepareStatement(sql);
+            st = db.prepareStatement(sql);      // Set params inputed from user
             st.setDouble(1, b0and10);
             st.setDouble(2, b11and15);
             st.setDouble(3, b16and20);
             st.setDouble(4, over20);
             st.setDouble(5, salary);
             
-            rs = st.executeQuery();
+            rs = st.executeQuery();             // Execute query, get result set
 
-            while(rs.next())
+            while(rs.next())                    // Add clmns of tuples to attrs
             {   
                 counties.add(rs.getString(1));
                 salaries.add(rs.getDouble(2));
             }  
             
-            rs.close();
+            rs.close();                         // Close connection to Database
             st.close();
             db.close();
-            // close database resources
+            
         } catch (SQLException exc) {
             throw new RuntimeException(exc);
         }
     }
-
 }

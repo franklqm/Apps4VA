@@ -1,7 +1,7 @@
 <%@page import="java.util.*, db.*" %>
 <!--Jeffrey Antetomaso, antetojl@dukes.jmu.edu-->
 <!DOCTYPE html>
-<html>
+<html>                          <!-- Home Page -->
     <head>
         <title>Query Crew's Project</title>
         <link href="webapp.css" rel="stylesheet" type="text/css">

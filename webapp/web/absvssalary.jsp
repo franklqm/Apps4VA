@@ -3,7 +3,7 @@
 <%@page import="java.util.*, db.*" %>
 <!--Jeffrey Antetomaso, antetojl@dukes.jmu.edu-->
 <!DOCTYPE html>
-<html>
+<html>                      <!--Absentee vs Salary Page-->
     <head>
         <title>Absentee VS Salary</title>
         <link href="webapp.css" rel="stylesheet" type="text/css">
