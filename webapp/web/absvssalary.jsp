@@ -9,10 +9,10 @@
         <link href="webapp.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
+    
     <body>
         <h1>Query</h1>
         <form>
-            
           Absentee Percentages:
           <br>
           
