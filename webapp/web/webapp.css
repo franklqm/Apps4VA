@@ -1,8 +1,11 @@
 /* Jeffrey Antetomaso, antetojl@dukes.jmu.edu */
 
+body {
+    background-color: lightgray;
+}
+
 h1 {
   color: black;
-  font-size: 15px;
   padding-top: 5px;
 }
 
@@ -11,8 +14,6 @@ pre {
 }  
 
 div {
-  class = "title";
-  font-size: 18px;
   text-align: center;
   font-weight: bold;
 }  
