@@ -31,6 +31,6 @@ tr:nth-child(even) {
 }  
 
 tr:nth-child(odd) {
-    background-color: lightgray;
+    background-color: lightblue;
 }
   
