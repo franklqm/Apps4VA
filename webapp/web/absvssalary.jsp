@@ -17,7 +17,7 @@
           <br>
           
           Between 0 and 10:   
-          <select name="b0and10symbol" id = "b0and10symbol">
+          <select id = "b0and10symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
@@ -28,7 +28,7 @@
           <br>
           
           Between 11 and 15:
-          <select name="b11and15symbol" id = "b11and15symbol">
+          <select id = "b11and15symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
@@ -39,7 +39,7 @@
           <br>
           
           Between 16 and 20:
-          <select name="b16and20symbol" id = "b16and20symbol">
+          <select id = "b16and20symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
@@ -50,7 +50,7 @@
           <br>
           
           Over 20: 
-          <select name="over20symbol" id = "over20symbol">
+          <select id = "over20symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
@@ -61,7 +61,7 @@
           <br>
           
           Teacher salary:
-          <select name="salarysymbol" id = "salarysymbol">
+          <select id = "salarysymbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
