@@ -99,10 +99,12 @@
             document.getElementById("b11and15").value = "<%= query.b11and15 %>";
             document.getElementById("b16and20").value = "<%= query.b16and20 %>";
             document.getElementById("over20").value = "<%= query.over20 %>";
+            document.getElementById("b0and10symbol").value = "<%= query.salary %>";
             document.getElementById("b0and10symbol").value = "<%= query.b0and10symbol %>";
             document.getElementById("b11and15symbol").value = "<%= query.b11and15symbol %>";
             document.getElementById("b16and20symbol").value = "<%= query.b16and20symbol %>";
             document.getElementById("over20symbol").value = "<%= query.over20symbol %>";
+            
         </script>
 
         <h1>Results</h1>
@@ -120,30 +122,21 @@
                 <%
                       if(request.getParameter("submit") != null)  { 
                       
-                      double[][] data = query.getData();
+                          
+                      query.getData();
+                      ArrayList<String> counties = query.counties;
+                      ArrayList<Double> salaries = query.salaries;
+                      
                       out.print("<tbody>\n");
-                      for (int i = 0; i < data.length; i++)
+                      for (int i = 0; i < counties.size(); i++)
                       {
 			out.println("<tr>");
-                        
-			for (int j = 0; j < data[0].length; j++)
-			{
-                            if (j == 0)
-                            {
-                                Double d = new Double(data[i][j]);
-                                int yr = d.intValue();
-                                out.println("<td align="+ "\"center\">" + yr + "</td>");
+                            if (i % 2 == 0){
+                                out.println("<td align="+ "\"center\">" + counties.get(i) + "</td>");
                             }    
                             else{
-                                Double toBeTruncated = new Double("3.5789055");
-
-                                Double rounded = BigDecimal.valueOf(data[i][j])
-                                .setScale(2, RoundingMode.HALF_UP)
-                                .doubleValue();
-                                out.println("<td align="+ "\"center\">" + rounded + "</td>");
-                            }
-			}  
-                        
+                                out.println("<td align="+ "\"center\">" + salaries.get(i) + "</td>");
+                            }                          
 			out.println("</tr>");
                       }    
 													
@@ -168,59 +161,26 @@
             function drawChart() {
                 var data = new google.visualization.DataTable();
 
-                data.addColumn('string', 'sch_year');
-                data.addColumn('number', '0 to 10');
-                data.addColumn('number', '11 to 15');
-                data.addColumn('number', '16 to 20');
-                data.addColumn('number', 'Over 20');
+                data.addColumn('string', 'county');
+                data.addColumn('number', 'salary');
 
                 data.addRows([
                     <% 
                         if(request.getParameter("submit") != null)
                         {
-                            double[][] data = query.getData();
+                            ArrayList<String> counties = query.counties;
+                            ArrayList<Double> salaries = query.salaries;
                             
                             //out.print("["); //first one
-                            for (int i = 0; i < 6; i++)
+                            for (int i = 0; i < counties.size(); i++)
                             {
-                                out.print("["); //for each
-                                
-                                for (int j = 0; j < 5; j++)
-                                {
-                                    if (j == 0)
-                                    {
-                                        Double d = new Double(data[i][j]);
-                                        int yr = d.intValue();
-                                        out.print("\"" + yr + "\", ");
-                                    }    
-                                    
-                                    else if (j != 4)
-                                    {
-                                        out.print(data[i][j] + ", ");
-                                    }   
-                                    
-                                    else
-                                    {
-                                        out.print(data[i][j]);
-                                    }    
-                                    
-                                }
-                                
-                                if (i == 5)
-                                {
-                                    out.print("]"); //for each
-                                }    
-                                
+                                if (i == counties.size() - 1)
+                                  out.print("[\"" + counties.get(i) + "\", " + salaries.get(i) + "]");
                                 else
-                                {
-                                    out.print("], ");
-                                }    
+                                  out.print("[\"" + counties.get(i) + "\", " + salaries.get(i) + "], ");
+                            }
                                 
-             
-                            } 
-                            
-                            //out.print("]");//last one
-                     }
+                        }
                     %>
 
 
