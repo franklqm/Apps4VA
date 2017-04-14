@@ -25,10 +25,11 @@ public class Query {
     public double b11and15 = 0.0;
     public double b16and20 = 0.0;
     public double over20 = 0.0;
-    public double salary = 0.0;
+    public double salary = 9999999999.0;
     
     public ArrayList<String> counties = new ArrayList<String>();
     public ArrayList<Double> salaries = new ArrayList<Double>();
+    public String sql;
     
 
     //private double[][] data;
@@ -59,9 +60,9 @@ public class Query {
         String str = request.getParameter(name);
         if (str != null)
           return str;
-          
+        
         else
-          return "";
+          return ">";
         
     }
     
@@ -69,30 +70,18 @@ public class Query {
         String str = request.getParameter(name);
         try {
             if (str != null)
-               return Double.parseDouble(str);
+              return Double.parseDouble(str);
+            else
+              return 0.0;
         } catch (NumberFormatException exc) {
             return 0.0;
         }
-        
-        return 0.0;
     }
 
     public void getData() {
         
         // TODO Step 3: Execute SQL
-        
-        if (b0and10symbol == null)
-            b0and10symbol = ">";
-        if (b11and15symbol == null)
-            b11and15symbol = ">";
-        if (b16and20symbol == null)
-            b16and20symbol = ">";
-        if (over20symbol == null)
-            over20symbol = ">";
-        if (salarysymbol == null)
-            salarysymbol = ">";
-        
-        String sql = "SELECT DISTINCT absentee.div_name, teacher.average_salary" +
+        sql = "SELECT DISTINCT absentee.div_name, teacher.average_salary" +
                 " FROM teacher " +
                     "JOIN absentee ON teacher.div_num = absentee.div_num " +
                     "AND absentee.b0and10 " + b0and10symbol + " ? " +

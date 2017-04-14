@@ -99,11 +99,12 @@
             document.getElementById("b11and15").value = "<%= query.b11and15 %>";
             document.getElementById("b16and20").value = "<%= query.b16and20 %>";
             document.getElementById("over20").value = "<%= query.over20 %>";
-            document.getElementById("b0and10symbol").value = "<%= query.salary %>";
+            document.getElementById("salary").value = "<%= query.salary %>";
             document.getElementById("b0and10symbol").value = "<%= query.b0and10symbol %>";
             document.getElementById("b11and15symbol").value = "<%= query.b11and15symbol %>";
             document.getElementById("b16and20symbol").value = "<%= query.b16and20symbol %>";
             document.getElementById("over20symbol").value = "<%= query.over20symbol %>";
+            document.getElementById("salarysymbol").value = "<%= query.salarysymbol %>";
             
         </script>
 
@@ -158,6 +159,7 @@
 
                 data.addRows([
                     <% 
+                        
                         if(request.getParameter("submit") != null)
                         {
                             
