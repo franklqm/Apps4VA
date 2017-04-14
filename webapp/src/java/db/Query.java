@@ -19,11 +19,11 @@ public class Query {
     public String b16and20symbol = null;
     public String over20symbol = null;
     public String salarysymbol = null;
-    public Double b0and10 = null;
-    public Double b11and15 = null;
-    public Double b16and20 = null;
-    public Double over20 = null;
-    public Double salary = null;
+    public double b0and10 = 0.0;
+    public double b11and15 = 0.0;
+    public double b16and20 = 0.0;
+    public double over20 = 0.0;
+    public double salary = 0.0;
     
 
     private double[][] data;
@@ -89,16 +89,16 @@ public class Query {
             over20symbol = ">";
         if (salarysymbol == null)
             salarysymbol = ">";
-        if (b0and10 == null)
-            b0and10 = 0.0;
-        if (b11and15 == null)
-            b11and15 = 0.0;
-        if (b16and20 == null)
-            b16and20 = 0.0;
-        if (over20 == null)
-            over20 = 0.0;
-        if (salary == null)
-            salary = 0.0;
+        if (b0and10symbol == null)
+            b0and10symbol = ">";
+        if (b11and15symbol == null)
+            b11and15symbol = ">";
+        if (b16and20symbol == null)
+            b16and20symbol = ">";
+        if (over20symbol == null)
+            over20symbol = ">";
+        if (salarysymbol == null)
+            salarysymbol = ">";
         
         
         
