@@ -1,3 +1,5 @@
+<%@page import="java.math.RoundingMode"%>
+<%@page import="java.math.BigDecimal"%>
 <%@page import="java.util.*, db.*" %>
 <!--Jeffrey Antetomaso, antetojl@dukes.jmu.edu-->
 <!DOCTYPE html>
@@ -184,7 +186,20 @@
                         
 			for (int j = 0; j < data[0].length; j++)
 			{
-                          out.println("<td align="+ "\"center\">" + data[i][j] + "</td>");
+                            if (j == 0)
+                            {
+                                Double d = new Double(data[i][j]);
+                                int yr = d.intValue();
+                                out.println("<td align="+ "\"center\">" + yr + "</td>");
+                            }    
+                            else{
+                                Double toBeTruncated = new Double("3.5789055");
+
+                                Double rounded = BigDecimal.valueOf(data[i][j])
+                                .setScale(2, RoundingMode.HALF_UP)
+                                .doubleValue();
+                                out.println("<td align="+ "\"center\">" + rounded + "</td>");
+                            }
 			}  
                         
 			out.println("</tr>");
@@ -232,7 +247,9 @@
                                 {
                                     if (j == 0)
                                     {
-                                        out.print("\"" + data[i][j] + "\", ");
+                                        Double d = new Double(data[i][j]);
+                                        int yr = d.intValue();
+                                        out.print("\"" + yr + "\", ");
                                     }    
                                     
                                     else if (j != 4)

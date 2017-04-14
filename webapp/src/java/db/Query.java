@@ -58,6 +58,7 @@ public class Query {
             data = new double[6][5];
             
             st = db.prepareStatement(sql);
+            div_name =  "%" + div_name + "%";
             st.setString(1, div_name);
             
             rs = st.executeQuery();
