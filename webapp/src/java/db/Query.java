@@ -13,12 +13,32 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class Query {
 
-    public String div_name;
+    public String div_name = null;
+    public String b0and10symbol = null;
+    public String b11and15symbol = null;
+    public String b16and20symbol = null;
+    public String over20symbol = null;
+    public String salarysymbol = null;
+    public Double b0and10 = null;
+    public Double b11and15 = null;
+    public Double b16and20 = null;
+    public Double over20 = null;
+    public Double salary = null;
+    
 
     private double[][] data;
 
     public Query(HttpServletRequest request) {
-        div_name = parseStr(request, "div_name");
+        b0and10 = parseDouble(request, "b0and10");
+        b11and15 = parseDouble(request, "b11and15");
+        b16and20 = parseDouble(request, "b16and20");
+        over20 = parseDouble(request, "over20");
+        b0and10symbol = parseStr(request, "b0and10symbol");
+        b11and15symbol = parseStr(request, "b11and15symbol");
+        b16and20symbol = parseStr(request, "b16and20symbol");
+        over20symbol = parseStr(request, "over20symbol");
+        salary = parseDouble (request, "salary");
+        salarysymbol = parseStr(request, "salarysymbol");
     }
 
     private int parseInt(HttpServletRequest request, String name) {
@@ -39,6 +59,18 @@ public class Query {
           return "";
         
     }
+    
+    private Double parseDouble(HttpServletRequest request, String name) {
+        String str = request.getParameter(name);
+        try {
+            if (str != null)
+               return Double.parseDouble(str);
+            else
+              return 0.0;
+        } catch (NumberFormatException exc) {
+            return 0.0;
+        }
+    }
 
     public double[][] getData() {
         // return cached copy if exists
@@ -46,24 +78,64 @@ public class Query {
             return data;
         }
         // TODO Step 3: Execute SQL
-        String sql = "SELECT sch_year, b0and10, b11and15, b16and20, over20 FROM absentee WHERE"
-                + " div_name ILIKE ?"
-                + " ORDER BY sch_year ASC";
+        
+        if (b0and10symbol == null)
+            b0and10symbol = ">";
+        if (b11and15symbol == null)
+            b11and15symbol = ">";
+        if (b16and20symbol == null)
+            b16and20symbol = ">";
+        if (over20symbol == null)
+            over20symbol = ">";
+        if (salarysymbol == null)
+            salarysymbol = ">";
+        if (b0and10 == null)
+            b0and10 = 0.0;
+        if (b11and15 == null)
+            b11and15 = 0.0;
+        if (b16and20 == null)
+            b16and20 = 0.0;
+        if (over20 == null)
+            over20 = 0.0;
+        if (salary == null)
+            salary = 0.0;
+        
+        
+        
+        String sql = "SELECT DISTINCT a.div_name, t.average_salary" +
+                " FROM teacher " +
+                    "JOIN absentee ON teacher.div_num = absentee.div_num " +
+                    "AND absentee.b0and10 " + b0and10symbol + " ? " +
+                    "AND absentee.b11and15 " + b11and15symbol + " ? " +
+                    "AND absentee.b16and20 " + b16and20symbol + " ? " +
+                    "AND absentee.over20 " + over20symbol + " ? " +
+                    "AND teacher.average_salary " + salarysymbol + " ? " + 
+                    "ORDER BY teacher.average_salary ASC";
         try {
             Connection db = Database.open();
             PreparedStatement st;
             ResultSet rs;
-            
             // execute query, save results
-            data = new double[6][5];
+            
             
             st = db.prepareStatement(sql);
-            div_name =  "%" + div_name + "%";
-            st.setString(1, div_name);
+            st.setDouble(1, b0and10);
+            st.setDouble(2, b11and15);
+            st.setDouble(3, b16and20);
+            st.setDouble(4, over20);
+            st.setDouble(5, salary);
             
             rs = st.executeQuery();
             
+            int size= 0;
+            while (rs.next()) {
+                size++;
+            }
             
+            data = new double[size][2];
+            
+            rs = st.executeQuery();
+
             int rowNumber = 0;
             
             while(rs.next())
