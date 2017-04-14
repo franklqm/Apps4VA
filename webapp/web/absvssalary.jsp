@@ -12,12 +12,11 @@
     <body>
         <h1>Query</h1>
         <form>
+            
           Absentee Percentages:
-          
           <br>
           
           Between 0 and 10:   
-          
           <select name="b0and10symbol" id = "b0and10symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
@@ -25,11 +24,9 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          
-          
           <input type="text" name = "b0and10" id = "b0and10">
-          
           <br>
+          
           Between 11 and 15:
           <select name="b11and15symbol" id = "b11and15symbol">
                 <option value ="<">Less than</option>
@@ -38,11 +35,9 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          
-          
           <input type="text" name = "b11and15" id = "b11and15">
-          
           <br>
+          
           Between 16 and 20:
           <select name="b16and20symbol" id = "b16and20symbol">
                 <option value ="<">Less than</option>
@@ -51,11 +46,9 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          
-          
           <input type="text" name = "b16and20" id = "b16and20">
-          
           <br>
+          
           Over 20: 
           <select name="over20symbol" id = "over20symbol">
                 <option value ="<">Less than</option>
@@ -64,10 +57,7 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          
-          
           <input type="text" name = "over20" id = "over20">
-          
           <br>
           
           Teacher salary:
@@ -78,17 +68,12 @@
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          
-          
           <input type="text" name = "salary" id = "salary">
-          
           <br>
           
-          
-          
           <input type="submit" name = "submit"/>
+          
         </form>
-        
         <br>
               
         <%
@@ -108,6 +93,8 @@
             
         </script>
 
+        
+        
         <h1>Results</h1>
         <table style="text-align: center">
             <thead>
@@ -136,14 +123,12 @@
                    
 
                     }%>
-        <br>
-        
-        
-
-
+                <br>
             </tbody>
         </table>
 
+        
+        
         <h1>Chart</h1>
         <div id="chart_div" style="width: 700px; height: 350px;"></div>
 
@@ -159,10 +144,8 @@
 
                 data.addRows([
                     <% 
-                        
                         if(request.getParameter("submit") != null)
                         {
-                            
                             ArrayList<String> counties = query.counties;
                             ArrayList<Double> salaries = query.salaries;
                             //out.print("["); //first one
@@ -173,11 +156,8 @@
                                 else
                                   out.print("[\"" + counties.get(i) + "\", " + salaries.get(i) + "], ");
                             }
-                                
                         }
                     %>
-
-
                 ]);
 
                 var options = {
@@ -186,7 +166,7 @@
                     },
                     vAxis: {
                         title: 'Year'
-                    },
+                    }
                 };
 
                 var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
