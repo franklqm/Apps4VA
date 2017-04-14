@@ -3,7 +3,7 @@
 <%@page import="java.util.*, db.*" %>
 <!--Jeffrey Antetomaso, antetojl@dukes.jmu.edu-->
 <!DOCTYPE html>
-<html>                      <!--Absentee vs Salary Page-->
+<html>
     <head>
         <title>Absentee VS Salary</title>
         <link href="webapp.css" rel="stylesheet" type="text/css">
@@ -17,61 +17,61 @@
           <br>
           
           Between 0 and 10:   
-          <select id = "b0and10symbol">
+          <select name = "b0and10symbol" id = "b0and10symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" id = "b0and10">
+          <input type="text" name = "b0and10" id = "b0and10">
           <br>
           
           Between 11 and 15:
-          <select id = "b11and15symbol">
+          <select name = "b11and10symbols" id = "b11and15symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" id = "b11and15">
+          <input type="text" name = "b11and15" id = "b11and15">
           <br>
           
           Between 16 and 20:
-          <select id = "b16and20symbol">
+          <select name = "b16and020symbols" id = "b16and20symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" id = "b16and20">
+          <input type="text" name = "b16and20" id = "b16and20">
           <br>
           
           Over 20: 
-          <select id = "over20symbol">
+          <select name = "over20symbol" id = "over20symbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" id = "over20">
+          <input type="text" name = "over20" id = "over20">
           <br>
           
           Teacher salary:
-          <select id = "salarysymbol">
+          <select name = "salarysymbol" id = "salarysymbol">
                 <option value ="<">Less than</option>
                 <option value ="<=">Less than or equal to</option>
                 <option value ="=">Equal to</option>
                 <option value =">=">Greater than or equal to</option>
                 <option value =">">Greater than</option>
           </select>     
-          <input type="text" id = "salary">
+          <input type="text" name = "salary" id = "salary">
           <br>
           
-          <input type="submit" name = "submit">
+          <input type="submit" name = "submit"/>
           
         </form>
         <br>
