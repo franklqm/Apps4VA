@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Absentee VS Salary</title>
         <link href="webapp.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
