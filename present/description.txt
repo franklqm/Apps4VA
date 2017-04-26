@@ -1,4 +1,1 @@
-There are many approaches to measuring student performance in school. But a more 
-important observation is realizing how that performance was shaped. Our
-application seeks to find an influencing factor by looking into teacher
-compensation and chronic absenteeism.
+There are many approaches to measuring student performance in school. Our application seeks to find an influencing factor by looking into teacher compensation and chronic absenteeism.
