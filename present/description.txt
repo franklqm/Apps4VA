@@ -1,2 +1,4 @@
-Please write a 1-2 line description of your project.
-See http://apps4va.cs.jmu.edu/2016/ for examples.
+There are many approaches to measuring student performance in school. But a more 
+important observation is realizing how that performance was shaped. Our
+application seeks to find an influencing factor by looking into teacher
+compensation and chronic absenteeism.
