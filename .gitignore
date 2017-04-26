@@ -13,3 +13,4 @@
 hs_err_pid*
 /webapp/nbproject/private/
 /webapp/build/
+/webapp/dist/
