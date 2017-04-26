@@ -9,9 +9,10 @@
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
     
+    <center>
     <body>
         <a href='https://vlds.virginia.gov'>
-            <img src='https://vlds.virginia.gov/media/1006/logo-large.png' height='100' width='300'>
+            <img src='https://vlds.virginia.gov/media/1006/logo-large.png' height='150' width='450'>
         </a>
         
         <h1><em>474 Query Crew</em></h1>
@@ -20,8 +21,12 @@
             
         <h3>Select your type of query</h3>
         <form>   
-            <input type="button" value="Absentee VS Teacher Salary" onClick="self.location = 'absvssalary.jsp'"/>
+            <input type="button" value="Absentee VS Teacher Salary" 
+                   onClick="self.location = 'absvssalary.jsp'"/>
+            <input type="button" value="Absentee VS Pass Rate" />
+            <input type="button" value="Disabil VS Absentee"/>
         </form>
         <br>
     </body>
+    </center>
 </html>

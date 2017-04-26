@@ -11,67 +11,106 @@
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
     
+    <center>
     <body>
         <h1>Query</h1>
         <form>
-          Absentee Percentages:
-          <br>
           
-          Between 0 and 10:   
-          <select name = "b0and10symbol" id = "b0and10symbol">
-                <option value ="<">Less than</option>
-                <option value ="<=">Less than or equal to</option>
-                <option value ="=">Equal to</option>
-                <option value =">=">Greater than or equal to</option>
-                <option value =">">Greater than</option>
-          </select>     
-          <input type="text" name = "b0and10" id = "b0and10">
+            <table style="color: #F2D16D; text-shadow: 1px 1px 2px black;">
+            <tr>
+                <th style="height: 50px">
+                    <em style="font-size: 125%">Absentee Percentages</em>:
+                    <br>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Between 0 and 10:
+                </td>
+                <td>
+                  <select name = "b0and10symbol" id = "b0and10symbol">
+                    <option value ="<">Less than</option>
+                    <option value ="<=">Less than or equal to</option>
+                    <option value ="=">Equal to</option>
+                    <option value =">=">Greater than or equal to</option>
+                    <option value =">">Greater than</option>
+                  </select>    
+                </td>
+                <td>
+                    <input type="text" name = "b0and10" id = "b0and10">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Between 11 and 15:
+                </td>
+                <td>
+                    <select name = "b11and10symbols" id = "b11and15symbol">
+                        <option value ="<">Less than</option>
+                        <option value ="<=">Less than or equal to</option>
+                        <option value ="=">Equal to</option>
+                        <option value =">=">Greater than or equal to</option>
+                        <option value =">">Greater than</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name = "b11and15" id = "b11and15">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Between 16 and 20:
+                </td>
+                <td>
+                  <select name = "b16and020symbols" id = "b16and20symbol">
+                    <option value ="<">Less than</option>
+                    <option value ="<=">Less than or equal to</option>
+                    <option value ="=">Equal to</option>
+                    <option value =">=">Greater than or equal to</option>
+                    <option value =">">Greater than</option>
+                  </select>  
+                </td>
+                <td>
+                    <input type="text" name = "b16and20" id = "b16and20">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Over 20: 
+                </td>
+                <td>
+                    <select name = "over20symbol" id = "over20symbol">
+                        <option value ="<">Less than</option>
+                        <option value ="<=">Less than or equal to</option>
+                        <option value ="=">Equal to</option>
+                        <option value =">=">Greater than or equal to</option>
+                        <option value =">">Greater than</option>
+                    </select>    
+                </td>
+                <td>
+                    <input type="text" name = "over20" id = "over20">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Teacher salary:
+                </td>
+                <td>
+                    <select name = "salarysymbol" id = "salarysymbol">
+                        <option value ="<">Less than</option>
+                        <option value ="<=">Less than or equal to</option>
+                        <option value ="=">Equal to</option>
+                        <option value =">=">Greater than or equal to</option>
+                        <option value =">">Greater than</option>
+                    </select>
+                </td>
+                <td style="text-align: left">
+                    <input type="text" name = "salary" id = "salary">
+                </td>
+            </tr>
+          </table>
           <br>
-          
-          Between 11 and 15:
-          <select name = "b11and10symbols" id = "b11and15symbol">
-                <option value ="<">Less than</option>
-                <option value ="<=">Less than or equal to</option>
-                <option value ="=">Equal to</option>
-                <option value =">=">Greater than or equal to</option>
-                <option value =">">Greater than</option>
-          </select>     
-          <input type="text" name = "b11and15" id = "b11and15">
-          <br>
-          
-          Between 16 and 20:
-          <select name = "b16and020symbols" id = "b16and20symbol">
-                <option value ="<">Less than</option>
-                <option value ="<=">Less than or equal to</option>
-                <option value ="=">Equal to</option>
-                <option value =">=">Greater than or equal to</option>
-                <option value =">">Greater than</option>
-          </select>     
-          <input type="text" name = "b16and20" id = "b16and20">
-          <br>
-          
-          Over 20: 
-          <select name = "over20symbol" id = "over20symbol">
-                <option value ="<">Less than</option>
-                <option value ="<=">Less than or equal to</option>
-                <option value ="=">Equal to</option>
-                <option value =">=">Greater than or equal to</option>
-                <option value =">">Greater than</option>
-          </select>     
-          <input type="text" name = "over20" id = "over20">
-          <br>
-          
-          Teacher salary:
-          <select name = "salarysymbol" id = "salarysymbol">
-                <option value ="<">Less than</option>
-                <option value ="<=">Less than or equal to</option>
-                <option value ="=">Equal to</option>
-                <option value =">=">Greater than or equal to</option>
-                <option value =">">Greater than</option>
-          </select>     
-          <input type="text" name = "salary" id = "salary">
-          <br>
-          
+            
           <input type="submit" name = "submit"/>
           
         </form>
@@ -94,86 +133,99 @@
             
         </script>
 
-        
-        
-        <h1>Results</h1>
-        <table style="text-align: center">
-            <thead>
-                <tr bgcolor="lightyellow">
-                    <th>County</th>
-                    <th>Salary</th>
-                </tr>
-            </thead>
-            <tbody>
                 <%
-                      if(request.getParameter("submit") != null)  { 
-                      
-                          
-                      query.getData();
-                      ArrayList<String> counties = query.counties;
-                      ArrayList<Double> salaries = query.salaries;
-                      
-                      for (int i = 0; i < counties.size(); i++)
-                      {
-			out.println("<tr>");
-                        out.println("<td align="+ "\"center\">" + counties.get(i) + "</td>");
-                        out.println("<td align="+ "\"center\">" + salaries.get(i) + "</td>");
-			out.println("</tr>");
-                      }    
-													
-                   
+                    if(request.getParameter("submit") != null)  
+                    { 
+                        query.getData();
+                        ArrayList<String> counties = query.counties;
+                        ArrayList<Double> salaries = query.salaries;
 
-                    }%>
-                <br>
-            </tbody>
-        </table>
+                        out.println("<hr style=\"border-style: outset; "
+                                    + "width: 750px;\"/>");
+                        out.println("<h1>Results</h1>");
 
-        
-        
-        <h1>Chart</h1>
-        <div id="chart_div" style="width: 700px; height: 350px;"></div>
+                        out.println("<table id=\"results\" style=\"text-align: center\">");
+                        out.println("<tr bgcolor=\"lightyellow\">");
+                        out.println("<th align=\"left\" id=\"results_th\">County</th>");
+                        out.println("<th align=\"left\">Salary</th>");
 
-        <script type="text/javascript">
-            google.charts.load('current', {packages: ['corechart', 'bar']});
-            google.charts.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-                var data = new google.visualization.DataTable();
-
-                data.addColumn('string', 'county');
-                data.addColumn('number', 'salary');
-
-                data.addRows([
-                    <% 
-                        if(request.getParameter("submit") != null)
+                        for (int i = 0; i < counties.size(); i++)
                         {
-                            ArrayList<String> counties = query.counties;
-                            ArrayList<Double> salaries = query.salaries;
-                            //out.print("["); //first one
-                            for (int i = 0; i < counties.size(); i++)
-                            {
-                                if (i == counties.size() - 1)
-                                  out.print("[\"" + counties.get(i) + "\", " + salaries.get(i) + "]");
-                                else
-                                  out.print("[\"" + counties.get(i) + "\", " + salaries.get(i) + "], ");
-                            }
-                        }
-                    %>
-                ]);
-
-                var options = {
-                    hAxis: {
-                        title: 'Count'
-                    },
-                    vAxis: {
-                        title: 'Year'
+                          out.println("<tr id=\"results\">");
+                          out.println("<td align="+ "\"left\">" + counties.get(i) + "</td>");
+                          out.println("<td align="+ "\"left\">" + salaries.get(i) + "</td>");
+                          out.println("</tr>");
+                        }  
+                        
+                        out.println("</table>");
                     }
-                };
+                %>
+        <br>
+        <br>
 
-                var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-                chart.draw(data, options);
-            }
-        </script>
+            <% 
+                if(request.getParameter("submit") != null)
+                {
+                    ArrayList<String> counties = query.counties;
+                    ArrayList<Double> salaries = query.salaries;
+
+                    out.println("<hr style=\"border-style: outset; "
+                                + "width: 750px;\"/>");
+
+                    out.println("<h1>Chart</h1>");
+                    out.println("<div id=\"chart_div\" "
+                                + "style=\"width: 700px; "
+                                + "height: 350px;\"></div>");
+
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("google.charts.load('current', "
+                                + "{packages: ['corechart', 'bar']});");
+                    out.println("google.charts.setOnLoadCallback" 
+                                + "(drawChart);");
+
+                    out.println("function drawChart() {");
+
+                    out.println("var data = "
+                        + "new google.visualization.DataTable();");
+
+                    out.println("data.addColumn('string', 'county');");
+                    out.println("data.addColumn('number', 'salary');");
+
+                    out.println("data.addRows([");
+                    for (int i = 0; i < counties.size(); i++)
+                    {
+                        if (i == counties.size() - 1)
+                          out.print("[\"" + counties.get(i) 
+                                    + "\", " + salaries.get(i) + "]");
+                        else
+                          out.print("[\"" + counties.get(i) 
+                                    + "\", " + salaries.get(i) + "], ");
+                    }
+                    out.println("]);");
+
+                    out.println("var options = {");
+
+                        out.println("hAxis: {");
+                        out.println("title: 'Count'");
+                        out.println("},");
+
+                        out.println("vAxis: {");
+                        out.println("title: 'Year'");
+                        out.println("}");
+
+                    out.println("};");
+
+                    out.println("var chart = new google.visualization"
+                                + ".BarChart(document.getElementById"
+                                + "('chart_div'));");
+                    out.println("chart.draw(data, options);");
+
+                    out.println("}");
+
+                    out.println("</script>");
+                }
+            %>
 
     </body>
+    </center>
 </html>

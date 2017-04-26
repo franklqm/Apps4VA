@@ -1,24 +1,39 @@
 /* Jeffrey Antetomaso, antetojl@dukes.jmu.edu */
 
 body {
-    background-color: lightgray;
+    background-image: url("http://i.huffpost.com/gen/1867610/images/o-JAMES-MADISON-UNIVERSITY-CAMPUS-facebook.jpg");
+    background-size: 1300px 700px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: sans-serif;
 }
 
 h1 {
-  color: black;
+  color: #6500c4;
   padding-top: 5px;
+  text-shadow: 1px 1px black;
+}
+
+h3 {
+   color: gold; 
+   text-shadow: 1px 1px black;
 }
 
 pre {
   background-color: lightblue;
 }  
 
+p {
+    color: azure;
+    text-shadow: 1px 1px black;
+}
+
 div {
   text-align: center;
   font-weight: bold;
 }  
 
-th {
+th.results_th {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -26,11 +41,20 @@ th {
   background-color: lightyellow;
 }
 
-tr:nth-child(even) {
-    background-color: white;
-}  
-
-tr:nth-child(odd) {
-    background-color: lightblue;
+th.query_th {
+    height: 250%;
 }
-  
+
+#results {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#results:nth-child(even) {
+    background-color: white;
+}
+
+#results:nth-child(odd) {
+    background-color: lightgray;
+}
