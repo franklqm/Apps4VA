@@ -23,6 +23,8 @@
         <form>   
             <input type="button" value="Absentee VS Teacher Salary" 
                    onClick="self.location = 'absvssalary.jsp'"/>
+            <input type="button" value="Absentee VS Pass Rate"
+                   onClick="self.location = 'absvsdroprate.jsp'"/>
         </form>
         <br>
     </body>
